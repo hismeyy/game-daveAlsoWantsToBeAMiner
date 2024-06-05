@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://cdjjuv61sygu6"]
+
+[ext_resource type="Script" path="res://scripts/entities/dave.gd" id="1_fr62m"]
+[ext_resource type="Texture2D" uid="uid://b7ko4d6hi2ddd" path="res://assets/graphics/characters/dave/dave01.png" id="1_mquuk"]
+[ext_resource type="Texture2D" uid="uid://cxc8svb5jabhr" path="res://assets/graphics/characters/dave/dave02.png" id="2_q6j4g"]
+[ext_resource type="Texture2D" uid="uid://c827vui04ms3k" path="res://assets/graphics/characters/hook/hook01.png" id="3_1uwmu"]
+[ext_resource type="Texture2D" uid="uid://daglj4qcgu368" path="res://assets/graphics/characters/hook/hook02.png" id="4_h8xds"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wi0on"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mquuk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mquuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q6j4g")
+}],
+"loop": true,
+"name": &"sport",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y5erj"]
+radius = 86.4697
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mx7h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1uwmu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1uwmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h8xds")
+}],
+"loop": true,
+"name": &"hook",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xpps"]
+size = Vector2(42, 23)
+
+[node name="Dave" type="Area2D"]
+script = ExtResource("1_fr62m")
+rotational_speed = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wi0on")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_y5erj")
+
+[node name="Rope" type="ColorRect" parent="."]
+offset_left = -23.0
+offset_top = 36.0
+offset_right = -18.0
+offset_bottom = 96.0
+rotation = 0.174533
+color = Color(0.121569, 0.121569, 0.129412, 1)
+
+[node name="Hook" type="Area2D" parent="Rope"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rope/Hook"]
+position = Vector2(2, 70)
+rotation = 1.51844
+sprite_frames = SubResource("SpriteFrames_3mx7h")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope/Hook"]
+visible = false
+position = Vector2(3, 71.5)
+shape = SubResource("RectangleShape2D_0xpps")

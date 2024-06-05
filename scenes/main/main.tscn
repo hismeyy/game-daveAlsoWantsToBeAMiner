@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://sg5l53f56bfw"]
+
+[ext_resource type="PackedScene" uid="uid://c3txphdysurah" path="res://scenes/main/background.tscn" id="1_nqw7p"]
+[ext_resource type="PackedScene" uid="uid://cdjjuv61sygu6" path="res://scenes/entities/dave.tscn" id="2_4h76n"]
+
+[node name="Main" type="Node"]
+
+[node name="Background" parent="." instance=ExtResource("1_nqw7p")]
+
+[node name="Dave" parent="." instance=ExtResource("2_4h76n")]
+position = Vector2(701, 110)
+rotational_speed = 1
