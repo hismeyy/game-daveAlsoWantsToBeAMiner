@@ -23,6 +23,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("fishing"):
+		$Play.play("sport")
 		if rotating:
 			rotating = false
 			elongating = true
@@ -50,9 +51,11 @@ func _physics_process(delta):
 			$Rope/Hook.position.y -= distance
 			if $Rope.points[1].y <= rope_min_length:
 				rotating = true
+				$Play.play("default")
 		
 
 
 # 钩子离开屏幕需要缩回
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	elongating = false
+	
