@@ -8,5 +8,4 @@
 [node name="Background" parent="." instance=ExtResource("1_nqw7p")]
 
 [node name="Dave" parent="." instance=ExtResource("2_4h76n")]
-position = Vector2(701, 110)
-rotational_speed = 1
+position = Vector2(685, 118)

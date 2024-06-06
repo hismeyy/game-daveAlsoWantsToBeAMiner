@@ -1,9 +1,11 @@
-extends Area2D
+extends Node2D
 
-
-@export var rotational_speed = 1
+# 绳子转速
+@export var rotational_speed = 2
+# 最大角度
+@export var max_degrees = 140
 var direction = -1
-var max_degrees = 60
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
