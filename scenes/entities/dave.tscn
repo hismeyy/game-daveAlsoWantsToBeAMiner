@@ -60,18 +60,17 @@ script = ExtResource("1_fr62m")
 sprite_frames = SubResource("SpriteFrames_wi0on")
 autoplay = "default"
 
-[node name="Rope" type="ColorRect" parent="."]
-offset_left = -23.0
-offset_top = 36.0
-offset_right = -18.0
-offset_bottom = 96.0
-rotation = 0.174533
-color = Color(0.121569, 0.121569, 0.129412, 1)
+[node name="Rope" type="Line2D" parent="."]
+position = Vector2(-20, 36)
+points = PackedVector2Array(0, 0, 0, 60)
+width = 5.0
+default_color = Color(0.164706, 0.176471, 0.164706, 1)
 
 [node name="Hook" type="Area2D" parent="Rope"]
+position = Vector2(-1, 70)
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rope/Hook"]
-position = Vector2(2, 70)
 rotation = 1.51844
 sprite_frames = SubResource("SpriteFrames_3mx7h")
 autoplay = "default"
