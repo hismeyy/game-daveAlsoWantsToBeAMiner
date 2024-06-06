@@ -52,3 +52,7 @@ func _physics_process(delta):
 				rotating = true
 		
 
+
+# 钩子离开屏幕需要缩回
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	elongating = false

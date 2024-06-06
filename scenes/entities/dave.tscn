@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdjjuv61sygu6"]
+[gd_scene load_steps=8 format=3 uid="uid://cdjjuv61sygu6"]
 
 [ext_resource type="Script" path="res://scripts/entities/dave.gd" id="1_fr62m"]
 [ext_resource type="Texture2D" uid="uid://b7ko4d6hi2ddd" path="res://assets/graphics/characters/dave/dave01.png" id="1_mquuk"]
@@ -50,13 +50,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xpps"]
-size = Vector2(42, 23)
-
 [node name="Dave" type="Node2D"]
 script = ExtResource("1_fr62m")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Play" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wi0on")
 autoplay = "default"
 
@@ -75,7 +72,11 @@ rotation = 1.51844
 sprite_frames = SubResource("SpriteFrames_3mx7h")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope/Hook"]
-visible = false
-position = Vector2(3, 71.5)
-shape = SubResource("RectangleShape2D_0xpps")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rope/Hook"]
+polygon = PackedVector2Array(-2, -10, -14, -4, -20, 12, -19, 13, -8, 7, -10, 4, -9, 1, 1, -5, 12, 1, 12, 4, 10, 6, 17, 12, 22, 13, 19, 7, 17, -1, 7, -8, 4, -10)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Rope/Hook"]
+position = Vector2(1, 1.5)
+scale = Vector2(2.1, 1.15)
+
+[connection signal="screen_exited" from="Rope/Hook/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
