@@ -28,7 +28,7 @@ func _process(delta):
 			rotating = false
 			elongating = true
 		else :
-			elongating = false
+			rope_retracted()
 
 func _physics_process(delta):
 	if rotating:
@@ -52,10 +52,22 @@ func _physics_process(delta):
 			if $Rope.points[1].y <= rope_min_length:
 				rotating = true
 				$Play.play("default")
+				$Rope/Hook/AnimatedSprite2D.play("default")
+				if $Rope/Hook/Mind != null :
+					$Rope/Hook/Mind.queue_free()
+				
 		
 
 
 # 钩子离开屏幕需要缩回
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	elongating = false
+	rope_retracted()
 	
+
+
+func _on_mind_mind_hid():
+	rope_retracted()
+
+func rope_retracted():
+	elongating = false
+	$Rope/Hook/AnimatedSprite2D.play("hook")

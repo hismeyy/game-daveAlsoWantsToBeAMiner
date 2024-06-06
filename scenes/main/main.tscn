@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://sg5l53f56bfw"]
+[gd_scene load_steps=4 format=3 uid="uid://sg5l53f56bfw"]
 
 [ext_resource type="PackedScene" uid="uid://c3txphdysurah" path="res://scenes/main/background.tscn" id="1_nqw7p"]
 [ext_resource type="PackedScene" uid="uid://cdjjuv61sygu6" path="res://scenes/entities/dave.tscn" id="2_4h76n"]
+[ext_resource type="PackedScene" uid="uid://dt6ltaqgvnjj7" path="res://scenes/entities/mind.tscn" id="3_ctjk8"]
 
 [node name="Main" type="Node"]
 
@@ -9,3 +10,28 @@
 
 [node name="Dave" parent="." instance=ExtResource("2_4h76n")]
 position = Vector2(685, 118)
+
+[node name="Mind" parent="." instance=ExtResource("3_ctjk8")]
+position = Vector2(705, 491)
+
+[node name="Mind6" parent="." instance=ExtResource("3_ctjk8")]
+position = Vector2(475, 532)
+
+[node name="Mind5" parent="." instance=ExtResource("3_ctjk8")]
+position = Vector2(901, 730)
+
+[node name="Mind4" parent="." instance=ExtResource("3_ctjk8")]
+position = Vector2(1155, 586)
+
+[node name="Mind3" parent="." instance=ExtResource("3_ctjk8")]
+position = Vector2(185, 757)
+
+[node name="Mind2" parent="." instance=ExtResource("3_ctjk8")]
+position = Vector2(137, 409)
+
+[connection signal="mind_hid" from="Mind" to="Dave" method="_on_mind_mind_hid"]
+[connection signal="mind_hid" from="Mind6" to="Dave" method="_on_mind_mind_hid"]
+[connection signal="mind_hid" from="Mind5" to="Dave" method="_on_mind_mind_hid"]
+[connection signal="mind_hid" from="Mind4" to="Dave" method="_on_mind_mind_hid"]
+[connection signal="mind_hid" from="Mind3" to="Dave" method="_on_mind_mind_hid"]
+[connection signal="mind_hid" from="Mind2" to="Dave" method="_on_mind_mind_hid"]

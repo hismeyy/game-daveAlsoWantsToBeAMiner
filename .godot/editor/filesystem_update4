@@ -2,3 +2,5 @@ res://scenes/main/main.tscn
 res://scenes/main/background.tscn
 res://scenes/entities/dave.tscn
 res://scripts/entities/dave.gd
+res://scenes/entities/mind.tscn
+res://scripts/entities/mind.gd

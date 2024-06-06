@@ -40,12 +40,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_1uwmu")
-}, {
-"duration": 1.0,
 "texture": ExtResource("4_h8xds")
 }],
-"loop": true,
+"loop": false,
 "name": &"hook",
 "speed": 5.0
 }]
@@ -68,6 +65,7 @@ position = Vector2(-1, 70)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rope/Hook"]
+z_index = 20
 rotation = 1.51844
 sprite_frames = SubResource("SpriteFrames_3mx7h")
 autoplay = "default"
