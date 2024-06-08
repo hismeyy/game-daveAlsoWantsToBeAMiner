@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://sg5l53f56bfw"]
+[gd_scene load_steps=5 format=3 uid="uid://sg5l53f56bfw"]
 
 [ext_resource type="PackedScene" uid="uid://c3txphdysurah" path="res://scenes/main/background.tscn" id="1_nqw7p"]
 [ext_resource type="PackedScene" uid="uid://cdjjuv61sygu6" path="res://scenes/entities/dave.tscn" id="2_4h76n"]
 [ext_resource type="PackedScene" uid="uid://dt6ltaqgvnjj7" path="res://scenes/entities/mind.tscn" id="3_ctjk8"]
+[ext_resource type="PackedScene" uid="uid://dediextgw02gg" path="res://scenes/main/hud_main.tscn" id="4_mqivg"]
 
 [node name="Main" type="Node"]
 
@@ -28,6 +29,8 @@ position = Vector2(185, 757)
 
 [node name="Mind2" parent="." instance=ExtResource("3_ctjk8")]
 position = Vector2(137, 409)
+
+[node name="HudMain" parent="." instance=ExtResource("4_mqivg")]
 
 [connection signal="mind_hid" from="Mind" to="Dave" method="_on_mind_mind_hid"]
 [connection signal="mind_hid" from="Mind6" to="Dave" method="_on_mind_mind_hid"]
